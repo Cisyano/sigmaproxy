@@ -22,7 +22,7 @@
         event.preventDefault();
         const url = document.getElementById('url').value;
         const proxyFrame = document.getElementById('proxyFrame');
-        proxyFrame.src = url;
+        proxyFrame.src = proxyFrame.src = "http://localhost:3000/proxy?url=https://www." + url;
     });
 </script>
 </body>
