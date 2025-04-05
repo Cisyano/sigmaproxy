@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Web Proxy</title>
+    <style>
+        body { font-family: sans-serif; }
+        #proxyForm { margin-bottom: 20px; }
+        #proxyFrame { width: 100%; height: 500px; border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+<h1>Simple Web Proxy</h1>
+<form id="proxyForm">
+    <label for="url">Enter URL to proxy:</label>
+    <input type="text" id="url" name="url" size="80">
+    <button type="submit">Go</button>
+</form>
+<iframe id="proxyFrame" src=""></iframe>
+
+<script>
+    document.getElementById('proxyForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const url = document.getElementById('url').value;
+        const proxyFrame = document.getElementById('proxyFrame');
+        proxyFrame.src = url;
+    });
+</script>
+</body>
+</html>
